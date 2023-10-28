@@ -6,6 +6,12 @@ function App() {
 
   function handleCreateDeck(e: React.FormEvent) {
     e.preventDefault();
+    fetch("http://localhost:3000/decks", {
+      method: "POST",
+      body: JSON.stringify({
+        title,
+      }),
+    });
   }
 
   return (
