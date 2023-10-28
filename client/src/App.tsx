@@ -25,7 +25,7 @@ function App() {
             setTitle(e.target.value);
           }}
         />
-          
+        <button>Create Deck</button>
       </form>
     </div>
   );
