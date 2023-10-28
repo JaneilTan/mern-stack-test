@@ -7,13 +7,14 @@ const PORT = 3000;
 
 const app = express();
 
+app.use(express.json());
 
-app.get("/", (req: Request, res: Response) => {
-    res.send("hello");
-});
-
-app.get("/hello", (req: Request, res: Response) => {
-    res.send("hello world");
+app.post("/decks", async (req: Request, res: Response) => {
+    const newDeck = new Deck({
+        title: req.body.title,
+    });
+    const createdDeck = await newDeck.save();
+    res.json(createdDeck);
 });
 
 mongoose.connect(
