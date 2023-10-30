@@ -17,6 +17,12 @@ function App() {
     setTitle("");
   }
 
+  useEffect(() => {
+    async function fetchDecks() {
+      await fetch("http://localhost:3000/decks");
+    }
+    fetchDecks();
+  }, []);
   return (
     <div className='App'>
       <form onSubmit={handleCreateDeck}>
