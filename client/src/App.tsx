@@ -1,16 +1,20 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function App() {
   const [title, setTitle] = useState("");
 
-  function handleCreateDeck(e: React.FormEvent) {
+  async function handleCreateDeck(e: React.FormEvent) {
     e.preventDefault();
-    fetch("http://localhost:3000/decks", {
+    await fetch("http://localhost:3000/decks", {
       method: "POST",
       body: JSON.stringify({
         title,
       }),
+      headers: {
+        "Content-Type": "application/json",
+      }, 
     });
+    setTitle("");
   }
 
   return (
