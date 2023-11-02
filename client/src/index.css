@@ -35,12 +35,12 @@ body {
   display: grid;
   width: 600px;
   margin: 0 auto;
+  gap: 10px;
   grid-template-columns: repeat(3, 1fr);
 }
 .decks li {
   display: block;
-  width: 90%;
-  height: 100px;
+  height: 120px;
   background: white;
   border: 1px solid white;
 }
@@ -68,7 +68,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
     color: #213547;
     background-color: #ffffff;
