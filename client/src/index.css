@@ -31,6 +31,19 @@ body {
   min-height: 100vh;
 }
 
+.decks {
+  display: grid;
+  width: 600px;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+}
+.decks li {
+  display: block;
+  width: 90%;
+  height: 100px;
+  background: white;
+  border: 1px solid white;
+}
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
