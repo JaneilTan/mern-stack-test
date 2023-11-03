@@ -21,6 +21,12 @@
   text-align: center;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
