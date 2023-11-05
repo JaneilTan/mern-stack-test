@@ -21,18 +21,6 @@
   text-align: center;
 }
 
-.App {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.App form {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-}
-
 a {
   font-weight: 500;
   color: #646cff;
@@ -50,28 +38,6 @@ body {
   min-height: 100vh;
 }
 
-.decks {
-  color: black;
-  display: grid;
-  width: 600px;
-  margin: 0 auto;
-  gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
-}
-.decks li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 120px;
-  background: white;
-  border: 1px solid white;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.decks li:hover {
-  background: #eee;
-}
 
 h1 {
   font-size: 3.2em;
