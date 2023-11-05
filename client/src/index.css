@@ -59,7 +59,9 @@ body {
   grid-template-columns: repeat(3, 1fr);
 }
 .decks li {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 120px;
   background: white;
   border: 1px solid white;
