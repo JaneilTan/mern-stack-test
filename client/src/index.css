@@ -29,6 +29,8 @@
 .App form {
   display: flex;
   gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 a {
@@ -49,6 +51,7 @@ body {
 }
 
 .decks {
+  color: black;
   display: grid;
   width: 600px;
   margin: 0 auto;
@@ -62,6 +65,7 @@ body {
   border: 1px solid white;
   border-radius: 10px;
 }
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
