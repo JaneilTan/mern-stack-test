@@ -66,6 +66,11 @@ body {
   background: white;
   border: 1px solid white;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+.decks li:hover {
+  background: #eee;
 }
 
 h1 {
