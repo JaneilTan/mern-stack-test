@@ -28,7 +28,9 @@ function App() {
     await fetch(`http://localhost:3000/decks/${deckId}`, {
       method: "DELETE", 
     });
+    setDecks(decks.filter((deck) => deck._id !== deckId));
   }
+  
   useEffect(() => {
     async function fetchDecks() {
       const response = await fetch("http://localhost:3000/decks");
