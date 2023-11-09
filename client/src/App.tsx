@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import "./App.css";
 
 type TDeck = {
@@ -46,9 +47,8 @@ function App() {
       <ul className="decks">
         {decks.map((deck) => (
           <li key={deck._id}>
-            <button onClick={() => handleDeleteDeck
-            (deck._id)}>X</button>
-            {deck.title}
+            <button onClick={() => handleDeleteDeck(deck._id)}>X</button>
+            <Link to={`decks/${deck._id}`}>{deck.title}</Link>
           </li>
         ))}
       </ul>
