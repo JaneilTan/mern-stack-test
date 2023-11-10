@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./App.css";
+import { getDecks, TDeck } from './api/getDecks';
 
-type TDeck = {
-  title: string;
-  _id: string;
-};
 
 function App() {
   const [decks, setDecks] = useState<TDeck[]>([]);
@@ -36,8 +33,7 @@ function App() {
 
   useEffect(() => {
     async function fetchDecks() {
-      const response = await fetch("http://localhost:3000/decks");
-      const newDecks = await response.json();
+      const newDecks = await getDecks();
       setDecks(newDecks);
     }
     fetchDecks();
