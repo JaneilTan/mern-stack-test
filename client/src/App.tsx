@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./App.css";
 import { getDecks, TDeck } from './api/getDecks';
+import { deleteDeck } from './api/deleteDeck';
 
 
 function App() {
@@ -10,24 +11,13 @@ function App() {
 
   async function handleCreateDeck(e: React.FormEvent) {
     e.preventDefault();
-    const response = await fetch("http://localhost:3000/decks", {
-      method: "POST",
-      body: JSON.stringify({
-        title,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      }, 
-    });
-    const deck = await response.json()
+    const deck = await createDeck(title)
     setDecks([...decks, deck])
     setTitle("");
   }
 
   async function handleDeleteDeck(deckId: string) {
-    await fetch(`http://localhost:3000/decks/${deckId}`, {
-      method: "DELETE", 
-    });
+    await deleteDeck(deckId)
     setDecks(decks.filter((deck) => deck._id !== deckId));
   }
 
