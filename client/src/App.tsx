@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import "./App.css";
 import { getDecks, TDeck } from './api/getDecks';
 import { deleteDeck } from './api/deleteDeck';
+import { createDeck } from './api/createDeck';
+import "./App.css";
+
 
 
 function App() {
@@ -11,7 +13,7 @@ function App() {
 
   async function handleCreateDeck(e: React.FormEvent) {
     e.preventDefault();
-    const deck = await createDeck(title)
+    const deck = await createDeck(title);
     setDecks([...decks, deck])
     setTitle("");
   }
