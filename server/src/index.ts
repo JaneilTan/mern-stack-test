@@ -6,6 +6,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import Deck from "./models/Deck";
 import { getDecksController } from "./controllers/getDeckController";
+import { createdDeckController } from "./controllers/createDeckController";
 
 const PORT = 3000;
  
@@ -16,13 +17,7 @@ app.use(express.json());
 
 app.get('/decks', getDecksController);
 
-app.post("/decks", async (req: Request, res: Response) => {
-    const newDeck = new Deck({
-        title: req.body.title,
-    });
-    const createdDeck = await newDeck.save();
-    res.json(createdDeck);
-});
+app.post("/decks", createdDeckController);
 
 app.delete("/decks/:deckId", async (req: Request, res: Response) => {
     const deckId = req.params.deckId;
