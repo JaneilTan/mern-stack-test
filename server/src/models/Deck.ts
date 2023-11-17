@@ -7,6 +7,7 @@ const Schema = mongoose.Schema;
 // defines a new Mongoose schema for a "Deck"
 const DeckSchema = new Schema({
   title: String,
+  cards: [String],
 });
 
 // Assigns the result of calling mongoose.model()
