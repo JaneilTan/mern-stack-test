@@ -3,20 +3,21 @@ import { useParams } from 'react-router-dom';
 // import { getDecks, TDeck } from './api/getDecks';
 // import { deleteDeck } from './api/deleteDeck';
 // import { createDeck } from './api/createDeck';
-import "./App.css";
 import { createCard } from './api/createCard';
+import "./App.css";
+
 
 
 
 export default function Deck() {
-//   const [cards, setCards] = useState<TDeck[]>([]);
+  const [cards, setCards] = useState<string[]>([]);
   const [text, setText] = useState("");
   const { deckId } = useParams();
 
   async function handleCreateDeck(e: React.FormEvent) {
     e.preventDefault();
-    const deck = await createCard(deckId!, text);
-    // setDecks([...decks, deck])
+    const { cards: serverCards }= await createCard(deckId!, text);
+    setCards(serverCards)
     setText("");
   }
 
@@ -34,14 +35,14 @@ export default function Deck() {
 //   }, []);
   return (
     <div className='App'>
-      {/* <ul className="decks">
-        {decks.map((deck) => (
-          <li key={deck._id}>
-            <button onClick={() => handleDeleteDeck(deck._id)}>X</button>
-            <Link to={`decks/${deck._id}`}>{deck.title}</Link>
+      <ul className="decks">
+        {cards.map((card) => (
+          <li key={card}>
+            {/* <button onClick={() => handleDeleteDeck(deck._id)}>X</button> */}
+            {card}
           </li>
         ))}
-      </ul> */}
+      </ul>
       <form onSubmit={handleCreateDeck}>
         <label htmlFor="card-text">Card Text</label>
         <input 
